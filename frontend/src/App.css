@@ -42,3 +42,7 @@
   margin: 0 auto;
   padding: 30px;
 }
+
+body {
+  background-color: rgb(108, 140, 199);
+}

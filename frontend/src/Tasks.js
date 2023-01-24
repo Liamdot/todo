@@ -87,10 +87,10 @@ function Tasks() {
         <table>
           <thead>
             <tr>
-              <th>Todo ID</th>
-              <th>Title</th>
-              <th>Completed</th>
-              <th>Actions</th>
+              <th class='table'>Todo ID</th>
+              <th class='table'>Title</th>
+              <th class='table'>Completed</th>
+              <th class='table'>Actions</th>
             </tr>
           </thead>
 

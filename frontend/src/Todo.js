@@ -15,7 +15,7 @@ function Todo(props) {
     <tr>
         <td>{todo.id}</td>
         <td>{todo.title}</td>
-        <td><a href="#todo" onClick={(e) => { setTodoCompleted(todo)}}>{translateCompleted(todo.completed)}</a></td>  
+        <td><button onClick={(e) => { setTodoCompleted(todo)}}>{translateCompleted(todo.completed)}</button></td>  
         <td><button onClick={() => deleteTodo(todo.id)}>Delete</button></td>
     </tr>
   );
