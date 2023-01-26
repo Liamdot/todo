@@ -26,3 +26,7 @@ h1 {
 input {
     font-size: 20px
 }
+label {
+    font-size: large;
+    color: darkblue;
+}

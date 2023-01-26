@@ -8,6 +8,7 @@ import initialTasks from './InitialTasks';
 
 function Tasks() {
   const [tasks, setTasks] = useState(initialTasks);
+  const [filter, setFilter] = useState('all');
 
   const TODO_BASE_URL = 'http://localhost:3000/todos';
 
@@ -54,6 +55,10 @@ function Tasks() {
     )
   }
 
+  function changeFilter(e) {
+    setFilter(e.target.value)
+  }
+
   function setTodoCompleted(todo) {
     const putBody = JSON.stringify({
       completed: !todo.completed
@@ -87,19 +92,38 @@ function Tasks() {
         <table>
           <thead>
             <tr>
-              <th class='table'>Todo ID</th>
-              <th class='table'>Title</th>
-              <th class='table'>Completed</th>
-              <th class='table'>Actions</th>
+              <th className='table'>Todo ID</th>
+              <th className='table'>Title</th>
+              <th className='table'>Completed</th>
+              <th className='table'>Actions</th>
             </tr>
           </thead>
 
           <tbody>
-            {tasks.map((todo) => {
+            {tasks.filter(todo => {
+              if (filter == 'all') {
+                return true
+              }
+              if (filter == 'completed' && todo.completed) {
+                return true
+              }
+              if (filter == 'incomplete' && !todo.completed) {
+                return true
+              }
+              return false
+              
+            }).map((todo) => {
               return <Todo key={todo.id} todo={todo} deleteTodo={deleteTodo} setTodoCompleted={setTodoCompleted} />
             })}
           </tbody>
         </table>
+        <br/>
+        <label htmlFor='filter'>Filter: </label>
+        <select id="filter" onChange={changeFilter}>
+          <option value="all">All</option>
+          <option value="completed">Completed</option>
+          <option value='incomplete'>Incomplete</option>
+        </select>
       </div>
 
       <div>
