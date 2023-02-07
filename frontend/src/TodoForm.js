@@ -18,7 +18,7 @@ function TodoForm(props) {
       <input
         type="text"
         ref={inputRef}
-        placeholder="What needs to be done?"
+        placeholder="e.g. make a new game"
       />
 
       <button type="submit" class="addButton">Add</button>

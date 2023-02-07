@@ -101,13 +101,13 @@ function Tasks() {
 
           <tbody>
             {tasks.filter(todo => {
-              if (filter == 'all') {
+              if (filter === 'all') {
                 return true
               }
-              if (filter == 'completed' && todo.completed) {
+              if (filter === 'completed' && todo.completed) {
                 return true
               }
-              if (filter == 'incomplete' && !todo.completed) {
+              if (filter === 'incomplete' && !todo.completed) {
                 return true
               }
               return false
